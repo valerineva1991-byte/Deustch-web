@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Examen 1</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h2>📝 Examen 1 <br><br> 📖 Mein Name ist Lena</h2>
+        <p>Mein Name ist Lena. Ich bin zwanzig Jahre alt. Ich wohne mit meiner Familie in einem Haus. <br><br>
+Wir sind vier Personen: mein Vater, meine Mutter, mein Bruder und ich.<br><br>
+Ich habe einen Bruder. Er heißt Tom und ist siebzehn Jahre alt.<br><br>
+Wir wohnen in der Nähe von einer kleinen Stadt.<br><br>
+Ich habe einen Hund und zwei Katzen. Sie sind sehr lieb.<br><br>
+Ich lese gerne und ich lerne Deutsch. Das macht mir Spaß!<br><br>
+Am Wochenende gehe ich oft spazieren. Manchmal treffe ich meine Freundin.<br><br>
+Wir sprechen und lachen viel. Das ist schön!</p>
+
+<p style="text-align:center; margin:20px 0;">
+  <audio controls preload="none">
+    <source src="./lenaaudio.mp3" type="audio/mpeg">
+  
+</p>
+
+<h3>✍️ Fragen zum Text</h3>
+<br>
+
+<p><strong>1. Wie heißt das Mädchen?</strong> <span id="res-q1"></span><br>
+    <label style="cursor: pointer;"><input type="radio" name="q1" value="a"> A) Anna</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q1" value="b"> B) Lena</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q1" value="c"> C) Tom</label>
+</p>
+
+<p><strong>2. Wie alt ist Lena?</strong> <span id="res-q2"></span><br>
+    <label style="cursor: pointer;"><input type="radio" name="q2" value="a"> A) 15</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q2" value="b"> B) 17</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q2" value="c"> C) 20</label>
+</p>
+
+<p><strong>3. Wie viele Personen sind in Lenas Familie?</strong> <span id="res-q3"></span><br>
+    <label style="cursor: pointer;"><input type="radio" name="q3" value="a"> A) Drei</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q3" value="b"> B) Vier</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q3" value="c"> C) Fünf</label>
+</p>
+
+<p><strong>4. Wie heißt Lenas Bruder?</strong> <span id="res-q4"></span><br>
+    <label style="cursor: pointer;"><input type="radio" name="q4" value="a"> A) Tom</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q4" value="b"> B) Lena</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q4" value="c"> C) Michael</label>
+</p>
+
+<p><strong>5. Was hat Lena zu Hause?</strong> <span id="res-q5"></span><br>
+    <label style="cursor: pointer;"><input type="radio" name="q5" value="a"> A) Einen Hund und zwei Katzen</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q5" value="b"> B) Zwei Hunde und eine Katze</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q5" value="c"> C) Einen Fisch</label>
+</p>
+
+<p><strong>6. Was lernt Lena?</strong> <span id="res-q6"></span><br>
+    <label style="cursor: pointer;"><input type="radio" name="q6" value="a"> A) Englisch</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q6" value="b"> B) Deutsch</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q6" value="c"> C) Französisch</label>
+</p>
+
+<p><strong>7. Was macht Lena am Wochenende?</strong> <span id="res-q7"></span><br>
+    <label style="cursor: pointer;"><input type="radio" name="q7" value="a"> A) Sie schläft den ganzen Tag</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q7" value="b"> B) Sie geht spazieren und trifft eine Freundin</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q7" value="c"> C) Sie arbeitet</label>
+</p>
+
+<p><strong>8. Was findet Lena schön?</strong> <span id="res-q8"></span><br>
+    <label style="cursor: pointer;"><input type="radio" name="q8" value="a"> A) Sprechen und lachen mit der Freundin</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q8" value="b"> B) Allein zu sein</label><br>
+    <label style="cursor: pointer;"><input type="radio" name="q8" value="c"> C) Fernsehen</label>
+</p>
+
+<!-- 📊 CUADRO DONDE SALE LA NOTA -->
+<div id="resultado" style="text-align:center; font-size:20px; margin:25px 0; font-weight:bold; color:#4a4785;"></div>
+
+<div style="text-align: center; margin-top: 15px;">
+    <button onclick="korrigiere()">✅ Korrigieren</button>
+    <button onclick="neuStart()">🔄 Neustart</button>
+</div>
+
+<br>
+<div style="text-align:center;">
+  <button class="back-button" onclick="goBack()">&lt;</button>
+</div>
+
+<script>
+// ===== ANTWORTEN UND ERLÄUTERUNGEN =====
+const respuestas = {
+  q1: { 
+    richtige: "b", 
+    erklaerung: "Im ersten Satz steht: Mein Name ist Lena." 
+  },
+  q2: { 
+    richtige: "c", 
+    erklaerung: "Im Text steht: Ich bin zwanzig Jahre alt. Zwanzig = 20." 
+  },
+  q3: { 
+    richtige: "b", 
+    erklaerung: "Vater + Mutter + Bruder + Lena = 4 Personen." 
+  },
+  q4: { 
+    richtige: "a", 
+    erklaerung: "Es steht: Er heißt Tom. Tom ist der Bruder." 
+  },
+  q5: { 
+    richtige: "a", 
+    erklaerung: "Im Text steht: Ich habe einen Hund und zwei Katzen." 
+  },
+  q6: { 
+    richtige: "b", 
+    erklaerung: "Es steht: Ich lerne Deutsch. Sie lernt Deutsch." 
+  },
+  q7: { 
+    richtige: "b", 
+    erklaerung: "Am Wochenende geht sie spazieren und trifft ihre Freundin." 
+  },
+  q8: { 
+    richtige: "a", 
+    erklaerung: "Sie sagt: Wir sprechen und lachen viel. Das ist schön!" 
+  }
+};
+
+const totalPreguntas = 8;
+
+// ✅ FUNKTION: KORRIGIEREN
+function korrigiere() {
+    let puntos = 0;
+    // ⚠️ ANTES decía "let i = i" → ERROR! Debe ser "let i = 1"
+    for (let i = 1; i <= totalPreguntas; i++) {
+        const nombre = "q" + i;
+        const caja = document.getElementById("res-" + nombre);
+        const seleccionada = document.querySelector('input[name="' + nombre + '"]:checked');
+
+        if (seleccionada && seleccionada.value === respuestas[nombre].richtige) {
+            puntos++;
+            caja.innerHTML = '<span style="color:green; font-weight:bold;"> ✅ Richtig!</span>';
+        } else {
+            caja.innerHTML = '<span style="color:red; font-weight:bold;"> ❌ ' + respuestas[nombre].erklaerung + '</span>';
+        }
+    }
+    // 📊 NOTA FINAL
+    const nota = Math.round((puntos / totalPreguntas) * 100);
+    document.getElementById("resultado").innerHTML = "💪 Sehr gut! " + puntos + " von " + totalPreguntas + " — Note: " + nota + "/100";
+}
+
+// 🔄 FUNKTION: NEUSTART
+function neuStart() {
+    for (let i = 1; i <= totalPreguntas; i++) {
+        const nombre = "q" + i;
+        const caja = document.getElementById("res-" + nombre);
+        const opciones = document.querySelectorAll('input[name="' + nombre + '"]');        
+        opciones.forEach(op => op.checked = false);
+        caja.innerHTML = "";
+    }
+    document.getElementById("resultado").innerHTML = "";
+}
+
+// 🔙 ZURÜCK-FUNKTION
+function goBack() {
+    history.back();
+}
+</script>
+
+</body>
+</html>

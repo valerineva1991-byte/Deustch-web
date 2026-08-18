@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lektion</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== MENÚ DE LA PÁGINA LEKTION ===== */
+        .contenido-lektion {
+            padding: 40px 60px;
+        }
+
+        .contenido-lektion h1 {
+            text-align: center;
+            font-size: 60px;
+            color: #2b2b2b;
+            margin: 30px 0 60px 0;
+            letter-spacing: 2px;
+        }
+
+        .menu-lista {
+            list-style: none;
+            padding-left: 80px;
+        }
+
+        .menu-lista li {
+            margin: 14px 0;
+            font-size: 20px;
+        }
+
+        .menu-lista li a {
+            color: #5c2d91;
+            text-decoration: none;
+        }
+
+        .menu-lista li a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== ELIMINAMOS FONDO BLANCO DEL CONTENEDOR ===== */
+        .container {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container contenido-lektion">
+        <h1>Lektion</h1>
+
+        <ul class="menu-lista">
+            <li><a href="grammatik.html">Grammatik</a></li>
+            <li><a href="gespräche.html">Gespräche</a></li>
+            <li><a href="verben.html">Verben</a></li>
+            <li><a href="prüfungen.html">Prüfungen</a></li>
+        </ul>
+    </div>
+
+    <!-- 🔙 BOTÓN DE VOLVER -->
+    <div style="position: fixed; right: 60px; bottom: 60px;">
+        <button class="back-button" onclick="goBack()">&lt;</button>
+    </div>
+
+    <script>
+        function goBack() {
+            history.back();
+        }
+    </script>
+
+</body>
+</html>

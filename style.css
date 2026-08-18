@@ -1,0 +1,230 @@
+/* ===== ESTILOS GENERALES ===== */
+body {
+    /* Imagen de fondo + color de respaldo */
+    background: #eceaea url("https://studying-in-germany.org/wp-content/uploads/2013/01/Study-German-language-in-Germany.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    margin: 0;
+    padding: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #121111;
+}
+
+/* ===== ELIMINAMOS EL FONDO BLANCO DEL CONTENEDOR ===== */
+.container {
+    background: transparent !important;
+    box-shadow: none !important;
+    max-width: 1100px;
+    width: 100%;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+/* ===== TÍTULO PRINCIPAL ===== */
+h1 {
+    text-align: center;
+    font-size: 60px;
+    color: #2b2b2b;
+    margin: 20px 0 30px 0;
+    letter-spacing: 2px;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #4a4785;
+}
+
+/* ===== TARJETA DE TEXTO ===== */
+.p01 {
+    background: rgba(213, 219, 233, 0.92);
+    padding: 30px;
+    border-radius: 14px;
+    max-width: 700px;
+    border-top: 2px dashed #918bbe;
+    border-bottom: 2px dashed #918bbe;
+    text-align: left;
+    margin: 0 auto;
+    color: #1a1a2e;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.8;
+    box-shadow: 0 4px 12px rgba(145, 139, 190, 0.15);
+}
+
+/* ===== GLOBO DE SALUDO ===== */
+.globi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.globo-texto {
+    position: relative;
+    background: #00aabb;
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 22px;
+    width: 220px;
+    text-align: center;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 170, 187, 0.25);
+}
+
+/* Punta del globo */
+.globo-texto::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: #00aabb transparent transparent;
+    display: block;
+    width: 0;
+}
+
+/* ===== TARJETA DE NÚMEROS Y DÍAS ===== */
+.num, .sem {
+    background: rgba(204, 209, 224, 0.92);
+    padding: 25px;
+    border-radius: 14px;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    color: #782f2f;
+    font-size: 18px;
+    line-height: 1.6;
+    box-shadow: 0 4px 12px rgba(141, 135, 189, 0.15);
+    letter-spacing: 1px;
+}
+
+.num h2, .sem h2 {
+    margin-top: 0;
+    color: #716ba3;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* ===== TABLA DE PREPOSICIONES Y COLORES ===== */
+table.pronom, table.colo {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 1.5rem auto;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(145, 139, 190, 0.15);
+}
+
+table.pronom th, table.colo th {
+    border: 1px solid #d4d8f0;
+    padding: 14px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.pronom td, table.colo td {
+    border: 1px solid #d4d8f0;
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.pronom thead, table.colo thead {
+    background: linear-gradient(135deg, #716ba3 0%, #4a4785 100%);
+    color: white;
+    font-weight: 600;
+}
+
+/* FILAS ALTERNAS DE COLOR CLARITO */
+table.pronom tbody tr:nth-child(even), 
+table.colo tbody tr:nth-child(even) {
+    background-color: rgba(240, 238, 247, 0.9);
+}
+
+/* EFECTO AL PASAR EL RATÓN */
+table.pronom tbody tr:hover,
+table.colo tbody tr:hover {
+    background-color: #e8e4f5;
+    transition: background-color 0.25s ease;
+}
+
+/* ===== CAJA DE AVISO ===== */
+.caja-aviso {
+    background: rgba(113, 107, 163, 0.12);
+    padding: 15px 20px;
+    border-radius: 10px;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    border-left: 4px solid #716ba3;
+    font-weight: 500;
+}
+
+/* ===== REPRODUCTOR DE AUDIO ===== */
+audio {
+    border-radius: 20px;
+    height: 40px;
+    display: block;
+    margin: 15px auto;
+}
+
+/* ===== BOTÓN LEKTION ===== */
+.lektion-link {
+    display: block;
+    width: 280px;
+    margin: 30px auto;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    background: #00aabb;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.lektion-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px #00aabb;
+}
+
+.lektion-link:active {
+    transform: translateY(0);
+}
+
+/* ===== BOTÓN DE VOLVER ===== */
+.back-button {
+    background: linear-gradient(135deg, #716ba3 0%, #4a4785 100%);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(113, 107, 163, 0.35);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(113, 107, 163, 0.45);
+    background: linear-gradient(135deg, #7f78b5 0%, #585496 100%);
+}
+
+.back-button:active {
+    transform: translateY(0);
+}
